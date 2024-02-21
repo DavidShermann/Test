@@ -2,3 +2,8 @@
 !.*py
 !Jenkinsfile
 !README*
+!Chart*
+!templates*
+!templates/*
+!templates/tests/*
+!values*
