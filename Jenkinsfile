@@ -6,5 +6,10 @@ pipeline {
 	        sh 'python3 -m pytest test.py'
             }
         }
+        stage('Push to master') {
+            steps{
+                sh 'git push feature main'
+            }
+        }
     }
 }
