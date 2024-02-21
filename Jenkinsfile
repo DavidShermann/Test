@@ -8,7 +8,8 @@ pipeline {
         }
         stage('Push to master') {
             steps{
-                sh 'git merge origin/feature main'
+                withCredentials([gitUsernamePassword(credentialsId: 'TEST', gitToolName: 'Default')]) {
+                    sh "git push -u feature main"
             }
         }
     }
