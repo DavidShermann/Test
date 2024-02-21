@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Push to master') {
             steps{
-                sh 'git merge feature main'
+                sh 'git merge origin/feature main'
             }
         }
     }
