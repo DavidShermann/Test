@@ -1,5 +1,6 @@
 *
-!.*py
+!*.py
+!*.yaml
 !Jenkinsfile
 !README*
 !Chart*

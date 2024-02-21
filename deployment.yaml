@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx1-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx1
+  template:
+    metadata:
+      labels:
+        app: nginx1
+    spec:
+      hostNetwork: true #used to expose the container to the host
+      containers:
+      - name: nginx1
+        image: nginx
+        ports:
+        - containerPort: 80
+
+# ---     
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: nginx2-deployment
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: nginx2
+#   template:
+#     metadata:
+#       labels:
+#         app: nginx2
+#     spec:
+#       hostNetwork: true #used to expose the container to the host 
+#       containers:  
+#       - name: nginx2
+#         image: nginx
+#         ports:
+#         - containerPort: 81
